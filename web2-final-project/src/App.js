@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div>
-      <h2>This is my cars</h2>
+      <h2>This is my list of cars</h2>
       <NewExpense />
       <Expenses items={expenses} />
     </div>
@@ -21,3 +21,4 @@ function App() {
 
 export default App;
 //saw lecture 3 on 23.11
+//need to see 30.11 lecture
