@@ -8,6 +8,7 @@ const ExpenseForm = (props) => {
   const [enteredDate, setEnteredDate] = useState("");
   const submitHandler = (event) => {
     event.preventDefault();
+    console.log(`${enteredAmount} ${enteredDate} ${enteredTitle}`);
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
@@ -59,7 +60,7 @@ const ExpenseForm = (props) => {
             value={enteredDate}
             onChange={dateChangeHandler}
             min="2019-01-01"
-            max="2023-01-01"
+            max="2027-01-01"
           />
         </div>
       </div>

@@ -1,4 +1,3 @@
-import ExpenseItem from "./components/ExpenseItem";
 import Expenses from "./components/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 import React,{useState} from 'react';
@@ -28,4 +27,5 @@ function App() {
 }
 
 export default App;
-//saw 30.11 lecture until 1:00:00
+//saw 30.11 lecture 
+//7.12 lecture will teach working with mongoose
