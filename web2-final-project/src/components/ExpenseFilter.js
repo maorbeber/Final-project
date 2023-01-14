@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const ExpenseFilter = (props) => {
-  const [filterYear, setFilterYear] = useState('');
+  const [filterYear, setFilterYear] = useState("");
 
   const filterChangeHandler = (event) => {
     setFilterYear(event.target.value);
-    console.log(`the year is ${event.target.value}`)
+    console.log(`the year is ${event.target.value}`);
     props.onChangeFilter(event.target.value);
-  }
+  };
 
   return (
     <select value={filterYear} onChange={filterChangeHandler}>
@@ -18,6 +18,6 @@ const ExpenseFilter = (props) => {
       <option value="2019">2019</option>
     </select>
   );
-}
+};
 
 export default ExpenseFilter;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ExpenseDate from "../ExpenseDate";
 import "./ExpenseForm.css";
 
@@ -6,6 +6,7 @@ const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
+  const [line, setLine] = useState("");
   const submitHandler = (event) => {
     event.preventDefault();
     console.log(`${enteredAmount} ${enteredDate} ${enteredTitle}`);
@@ -15,11 +16,20 @@ const ExpenseForm = (props) => {
       date: new Date(enteredDate),
     };
     props.onSaveExpenseData(expenseData);
+    setLine(enteredDate);
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
-    console.log(expenseData);
   };
+
+  useEffect(() => {
+    fetch("http://localhost:3000")
+      .then((Response) => Response.json())
+      .then((data) => {
+        setEnteredTitle(data.title);
+        setEnteredAmount(data.amount);})
+      .catch((err) => console.log("Something went wrong " + err));
+  }, [line]);
   const titleChangeHandler = (event) => {
     console.log(event.target.value);
     setEnteredTitle(event.target.value);
