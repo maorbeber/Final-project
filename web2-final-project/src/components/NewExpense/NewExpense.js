@@ -7,14 +7,23 @@ const NewExpense = (props) => {
     console.log(enteredExpenseData);
     const expenseData = {
       ...enteredExpenseData,
-      id: Math.random().toString()
     };
+    fetch("http://localhost:3000/addproduct", {
+      method: "POST",
+      body: JSON.stringify(enteredExpenseData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => console.log("Success:", data))
+      .catch((error) => console.error("Error:", error));
     console.log(expenseData);
     props.onAddExpense(expenseData);
-  }
+  };
   return (
     <div className="new-expense">
-      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler}/>
+      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
     </div>
   );
 };

@@ -39,6 +39,7 @@ function App() {
 
 export default App;
 //saw 7.12 lecture 
+//started lecture 14.7
 //worked alone on implementing mongoose.
 //handled getting the products from mongoose.
-// need to handle adding a product.
+//add product is on NewExpense.js
