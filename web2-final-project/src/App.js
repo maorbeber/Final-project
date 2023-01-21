@@ -38,8 +38,9 @@ function App() {
 }
 
 export default App;
-//saw 7.12 lecture
-//started lecture 14.7 -> 00:39:42
+//saw lecture 14.12 (new project -> learned about customHooks and fragments)
 //worked alone on implementing mongoose.
 //handled getting the products from mongoose.
 //add product is on NewExpense.js
+//need to see lecture 21.12 -> main topic will be firebase
+//lecture 21.12 -> opened a new project

@@ -22,14 +22,14 @@ const ExpenseForm = (props) => {
     setEnteredDate("");
   };
 
-  useEffect(() => {
-    fetch("http://localhost:3000")
-      .then((Response) => Response.json())
-      .then((data) => {
-        setEnteredTitle(data.title);
-        setEnteredAmount(data.amount);})
-      .catch((err) => console.log("Something went wrong " + err));
-  }, [line]);
+  // useEffect(() => {
+  //   fetch("http://localhost:3000")
+  //     .then((Response) => Response.json())
+  //     .then((data) => {
+  //       setEnteredTitle(data.title);
+  //       setEnteredAmount(data.amount);})
+  //     .catch((err) => console.log("Something went wrong " + err));
+  // }, [line]);
   const titleChangeHandler = (event) => {
     console.log(event.target.value);
     setEnteredTitle(event.target.value);
